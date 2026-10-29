@@ -72,7 +72,7 @@ export default function PracticeAreaDetailPage({ params }: Props) {
   };
 
   return (
-    <div className="py-12 sm:py-20">
+    <div className="pt-28 pb-16 sm:pt-36 sm:pb-24">
       <JsonLd data={faqSchema} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">

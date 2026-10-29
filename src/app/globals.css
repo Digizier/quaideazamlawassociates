@@ -26,6 +26,9 @@
   --font-cormorant: 'Cormorant Garamond', Georgia, serif;
   --font-manrope: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-urdu: 'Noto Nastaliq Urdu', serif;
+
+  --gradient-gold: linear-gradient(135deg, #ECC274 0%, #D4AF37 50%, #B8860B 100%);
+  --gradient-hero: linear-gradient(100deg, rgba(14, 27, 21, 0.96) 0%, rgba(18, 36, 29, 0.85) 45%, rgba(20, 42, 33, 0.35) 100%);
 }
 
 html {
@@ -50,11 +53,36 @@ body {
   font-weight: 700;
 }
 
-/* Subtle metallic hairline */
+/* Metallic hairline divider */
 .gold-rule {
   background: linear-gradient(90deg, #D4AF37 0%, #ECC274 50%, transparent 100%);
   width: 4rem;
   height: 2px;
+}
+
+/* Exact Hero Overlay */
+.bg-hero-overlay {
+  background-image: var(--gradient-hero);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background-image: var(--gradient-gold);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.bg-gold-gradient {
+  background-image: var(--gradient-gold);
+}
+
+/* Quaid-e-Azam feather mask to seamlessly blend into background */
+.quaid-portrait-mask {
+  -webkit-mask-image: linear-gradient(270deg, #000 45%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, #000 70%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(270deg, #000 45%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, #000 70%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 /* Custom scrollbar */

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function AdvocateProfilePage() {
   return (
-    <div className="py-12 sm:py-20">
+    <div className="pt-28 pb-16 sm:pt-36 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-semibold text-gold-deep uppercase tracking-widest">
