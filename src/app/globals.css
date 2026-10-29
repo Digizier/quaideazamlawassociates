@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FBF9F5;
+  --foreground: #14251F;
+  --card: #FFFFFF;
+  --card-foreground: #14251F;
+  --primary: #1C3B32;
+  --primary-foreground: #FBF9F5;
+  --secondary: #F3EFE7;
+  --secondary-foreground: #14251F;
+  --muted: #EDE6DA;
+  --muted-foreground: #556860;
+  --gold: #D4AF37;
+  --gold-deep: #A67C2E;
+  --gold-foreground: #14251F;
+  --ink: #0F1D17;
+  --ink-foreground: #F4EFE6;
+  --ink-muted: #8E9F97;
+  --border: #E5DFD5;
+
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-manrope: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-manrope);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Legal Eyebrow micro-heading */
+.eyebrow {
+  font-family: var(--font-manrope);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Subtle metallic hairline */
+.gold-rule {
+  background: linear-gradient(90deg, #D4AF37 0%, #ECC274 50%, transparent 100%);
+  width: 4rem;
+  height: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1D17;
+}
+::-webkit-scrollbar-thumb {
+  background: #A67C2E;
+  border-radius: 4px;
+}
