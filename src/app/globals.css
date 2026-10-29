@@ -85,6 +85,73 @@ body {
   mask-composite: intersect;
 }
 
+/* --- Hang / Swing Rotate Vibration Animation for CTA buttons --- */
+@keyframes periodic-hang-vibrate {
+  0%, 65%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  68% {
+    transform: rotate(-6deg) scale(1.03);
+  }
+  72% {
+    transform: rotate(6deg) scale(1.03);
+  }
+  76% {
+    transform: rotate(-4.5deg) scale(1.02);
+  }
+  80% {
+    transform: rotate(4.5deg) scale(1.02);
+  }
+  84% {
+    transform: rotate(-2.5deg) scale(1.01);
+  }
+  88% {
+    transform: rotate(2deg) scale(1.01);
+  }
+  92% {
+    transform: rotate(-1deg) scale(1);
+  }
+  96% {
+    transform: rotate(0.5deg) scale(1);
+  }
+}
+
+@keyframes active-hang-swing {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-7deg); }
+  40% { transform: rotate(6deg); }
+  60% { transform: rotate(-4deg); }
+  80% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-hang-vibrate {
+  animation: periodic-hang-vibrate 4.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.animate-hang-vibrate:hover {
+  animation: active-hang-swing 0.85s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Phone bell ringing icon animation */
+@keyframes phone-bell {
+  0%, 70%, 100% { transform: rotate(0deg); }
+  73% { transform: rotate(-18deg); }
+  77% { transform: rotate(18deg); }
+  81% { transform: rotate(-14deg); }
+  85% { transform: rotate(14deg); }
+  89% { transform: rotate(-8deg); }
+  93% { transform: rotate(8deg); }
+}
+
+.animate-phone-bell {
+  animation: phone-bell 4.2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

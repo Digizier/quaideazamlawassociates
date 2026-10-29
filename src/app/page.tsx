@@ -62,35 +62,40 @@ export default function HomePage() {
               <strong className="text-gold font-semibold">Advocate Raheel Anis</strong> — delivered with professionalism, dedication and complete confidentiality.
             </p>
 
-            {/* CTAs */}
+            {/* Hero CTAs with rounded edges, 2-row mobile layout, and hang-vibrate attention animation */}
             <div
-              className="animate-rise mt-8 sm:mt-10 flex flex-wrap gap-3"
+              className="animate-rise mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3"
               style={{ animationDelay: "0.4s" }}
             >
+              {/* Row 1 on mobile: Primary Book Consultation button */}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer bg-gold-gradient text-ink font-bold shadow-gold hover:brightness-105 hover:-translate-y-0.5 transition-all h-12 rounded-sm px-7 text-sm sm:text-base"
+                className="animate-hang-vibrate inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap cursor-pointer bg-gold-gradient text-ink font-bold shadow-gold hover:brightness-110 active:scale-95 transition-all h-12 rounded-full px-8 text-sm sm:text-base"
               >
-                Book Consultation
+                <span>Book Consultation</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
 
-              <a
-                href="tel:+923008211981"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors border border-white/30 text-white font-semibold hover:bg-white/10 hover:border-gold h-12 rounded-sm px-6 text-sm sm:text-base"
-              >
-                <Phone className="h-4 w-4 text-gold" />
-                <span>0300-8211981</span>
-              </a>
+              {/* Row 2 on mobile: Phone and WhatsApp side-by-side in 2 columns */}
+              <div className="grid grid-cols-2 gap-3 w-full sm:w-auto sm:flex sm:gap-3">
+                <a
+                  href="tel:+923008211981"
+                  className="animate-hang-vibrate inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-all border border-white/30 bg-white/5 text-white font-semibold hover:bg-white/10 hover:border-gold active:scale-95 h-12 rounded-full px-4 sm:px-6 text-xs sm:text-base"
+                >
+                  <Phone className="h-4 w-4 text-gold animate-phone-bell shrink-0" />
+                  <span>0300-8211981</span>
+                </a>
 
-              <a
-                href="https://wa.me/923008211981?text=Hello%20Advocate%20Raheel%20Anis,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors bg-whatsapp text-white font-semibold shadow hover:brightness-110 h-12 rounded-sm px-6 text-sm sm:text-base"
-              >
-                <MessageCircle className="h-4 w-4 fill-current" />
-                <span>WhatsApp</span>
-              </a>
+                <a
+                  href="https://wa.me/923008211981?text=Hello%20Advocate%20Raheel%20Anis,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-all bg-whatsapp text-white font-semibold shadow hover:brightness-110 active:scale-95 h-12 rounded-full px-4 sm:px-6 text-xs sm:text-base"
+                >
+                  <MessageCircle className="h-4 w-4 fill-current shrink-0" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
 
