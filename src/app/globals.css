@@ -163,3 +163,197 @@ body {
   background: #A67C2E;
   border-radius: 4px;
 }
+
+/* ==========================================================================
+   QUAID-E-AZAM LAW ASSOCIATES - LUXURY CINEMATIC PRELOADER ANIMATION
+   Timeline: 2.25s total
+   Phase 1 (0.0 - 0.2s): Black Screen
+   Phase 2 (0.2 - 0.9s): Exact Logo Entrance & Metallic Gold Shine
+   Phase 3 (0.9 - 1.3s): Golden Flash & Left-to-Right Wipe Exit
+   Phase 4 (1.3 - 2.0s): Firm Name Reveal in Luxury Serif Gold
+   Exit    (2.0 - 2.25s): Seamless Dissolve into Homepage
+   ========================================================================== */
+
+/* Anti-flash rule for subsequent session views */
+html.preloader-done #qla-preloader {
+  display: none !important;
+}
+
+/* Entire Preloader Backdrop Fade */
+@keyframes qla-backdrop-fade {
+  0%, 88% {
+    opacity: 1;
+    visibility: visible;
+  }
+  98% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Phase 2 Entrance + Hold + Phase 3 Golden Flash & Left-to-Right Wipe Exit */
+@keyframes qla-logo-cinematic {
+  /* Phase 1: 0 - 0.2s: Pure dark black background */
+  0%, 9% {
+    opacity: 0;
+    transform: scale(0.92);
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1) drop-shadow(0 0 0 rgba(212,175,55,0));
+  }
+  /* Phase 2: 0.2s - 0.52s: Smooth fade-in + subtle scale-up */
+  23% {
+    opacity: 1;
+    transform: scale(1);
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1) drop-shadow(0 8px 30px rgba(0,0,0,0.8));
+  }
+  /* Phase 2: 0.52s - 0.88s: Stable hold with metallic sweep */
+  39% {
+    opacity: 1;
+    transform: scale(1);
+    clip-path: inset(0 0 0 0);
+    filter: brightness(1) drop-shadow(0 8px 30px rgba(0,0,0,0.8));
+  }
+  /* Phase 3: 0.88s - 0.94s: Quick elegant golden flash */
+  41.5% {
+    opacity: 1;
+    transform: scale(1.025);
+    filter: brightness(1.35) drop-shadow(0 0 32px rgba(212, 175, 55, 0.8));
+    clip-path: inset(0 0 0 0);
+  }
+  43.5% {
+    opacity: 1;
+    transform: scale(0.99);
+    filter: brightness(1.05) drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+    clip-path: inset(0 0 0 0);
+  }
+  /* Phase 3: 0.95s - 1.25s: Smooth left-to-right wipe exit & subtle shrink */
+  44.5% {
+    clip-path: inset(0 0 0 0);
+    transform: scale(0.99);
+    opacity: 1;
+  }
+  56.5% {
+    opacity: 0.95;
+    transform: scale(0.96);
+    clip-path: inset(0 0 0 100%);
+    filter: brightness(1);
+  }
+  57.5%, 100% {
+    opacity: 0;
+    transform: scale(0.95);
+    clip-path: inset(0 0 0 100%);
+    pointer-events: none;
+  }
+}
+
+/* Phase 2: Metallic Golden Light Sweep across the logo */
+@keyframes qla-metallic-shine {
+  0%, 18% {
+    opacity: 0;
+    transform: translateX(-140%) skewX(-24deg);
+  }
+  22% {
+    opacity: 0.85;
+  }
+  36% {
+    opacity: 0.85;
+    transform: translateX(180%) skewX(-24deg);
+  }
+  38%, 100% {
+    opacity: 0;
+    transform: translateX(180%) skewX(-24deg);
+  }
+}
+
+/* Phase 3: Vertical Golden Wipe Beam accompanying the wipe front */
+@keyframes qla-wipe-streak {
+  0%, 43% {
+    opacity: 0;
+    left: 0%;
+  }
+  44.5% {
+    opacity: 1;
+    left: 0%;
+  }
+  56.5% {
+    opacity: 1;
+    left: 100%;
+  }
+  57.5%, 100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+/* Phase 4: Firm Name Typography Reveal (1.28s - 2.0s) */
+@keyframes qla-text-reveal {
+  0%, 55% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateY(3px) scale(0.98);
+  }
+  57% {
+    opacity: 1;
+    clip-path: inset(0 100% 0 0);
+    transform: translateY(2px) scale(0.985);
+  }
+  75% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scale(1);
+  }
+  88% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+
+/* Phase 4: Firm Subtitle Reveal */
+@keyframes qla-subtitle-reveal {
+  0%, 63% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  74% {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+  88% {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+/* Phase 4: Golden Hairline expansion */
+@keyframes qla-gold-hairline {
+  0%, 60% {
+    opacity: 0;
+    width: 0%;
+  }
+  74% {
+    opacity: 0.85;
+    width: 60%;
+  }
+  88% {
+    opacity: 0.85;
+    width: 60%;
+  }
+  100% {
+    opacity: 0;
+    width: 70%;
+  }
+}

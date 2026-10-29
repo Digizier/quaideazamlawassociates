@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { LawFirmJsonLd } from "@/components/JsonLd";
+import { Preloader } from "@/components/Preloader";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -82,9 +83,25 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="preload" href="/images/firm-crest-official.jpg" as="image" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var isDebug = window.location.search.indexOf('debug_phase') !== -1;
+                if (!isDebug) {
+                  if (sessionStorage.getItem('qla_preloader_seen') === '1' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    document.documentElement.classList.add('preloader-done');
+                  }
+                }
+              } catch(e) {}
+            `,
+          }}
+        />
         <LawFirmJsonLd />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased selection:bg-gold/30 selection:text-ink">
+        <Preloader />
         <Header />
         <main className="min-h-[calc(100vh-140px)]">{children}</main>
         <Footer />
