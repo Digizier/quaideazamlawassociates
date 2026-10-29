@@ -8,36 +8,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FBF9F5",
+        foreground: "#14251F",
         card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
+          DEFAULT: "#FFFFFF",
+          foreground: "#14251F",
         },
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "#1C3B32",
+          foreground: "#FBF9F5",
         },
         secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
+          DEFAULT: "#F3EFE7",
+          foreground: "#14251F",
         },
         muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
+          DEFAULT: "#EDE6DA",
+          foreground: "#556860",
         },
         gold: {
-          DEFAULT: "var(--gold)",
-          deep: "var(--gold-deep)",
-          foreground: "var(--gold-foreground)",
+          DEFAULT: "#D4AF37",
+          light: "#ECC274",
+          deep: "#A67C2E",
+          foreground: "#0F1D17",
         },
         ink: {
-          DEFAULT: "var(--ink)",
-          foreground: "var(--ink-foreground)",
-          muted: "var(--ink-muted)",
+          DEFAULT: "#0F1D17",
+          deep: "#09130F",
+          card: "#14251E",
+          foreground: "#F4EFE6",
+          muted: "#8E9F97",
+        },
+        cream: {
+          DEFAULT: "#F4EFE6",
+          light: "#FAF7F2",
+          muted: "#C5C1B9",
+          dark: "#8E9F97",
         },
         whatsapp: "#25D366",
-        border: "var(--border)",
+        border: "#E5DFD5",
       },
       fontFamily: {
         display: ["var(--font-cormorant)", "Georgia", "serif"],
@@ -45,13 +54,13 @@ const config: Config = {
         urdu: ["var(--font-urdu)", "serif"],
       },
       boxShadow: {
-        elegant: "0 10px 30px -10px rgba(15, 29, 23, 0.15)",
+        elegant: "0 10px 30px -10px rgba(15, 29, 23, 0.25)",
         gold: "0 8px 24px -6px rgba(212, 175, 55, 0.35)",
         card: "0 4px 20px -2px rgba(15, 29, 23, 0.06)",
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(135deg, #ECC274 0%, #D4AF37 50%, #B8860B 100%)",
-        "hero-overlay": "linear-gradient(100deg, rgba(15, 29, 23, 0.96) 0%, rgba(18, 36, 29, 0.88) 50%, rgba(20, 42, 33, 0.5) 100%)",
+        "hero-overlay": "linear-gradient(100deg, rgba(14, 27, 21, 0.96) 0%, rgba(18, 36, 29, 0.85) 45%, rgba(20, 42, 33, 0.35) 100%)",
         "ink-overlay": "linear-gradient(to bottom, rgba(15, 29, 23, 0.92), rgba(15, 29, 23, 0.98))",
       },
       animation: {

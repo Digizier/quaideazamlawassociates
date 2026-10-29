@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Scale,
   Phone,
@@ -8,17 +7,10 @@ import {
   Shield,
   ArrowRight,
   MapPin,
-  CheckCircle,
-  FileText,
   Lock,
   Target,
   Gavel,
   Landmark,
-  Briefcase,
-  Receipt,
-  Users,
-  Home as HomeIcon,
-  ScrollText,
 } from "lucide-react";
 import { PRACTICE_AREAS } from "@/data/practiceAreas";
 import { WhatsAppConsultationForm } from "@/components/WhatsAppConsultationForm";
@@ -27,7 +19,7 @@ export default function HomePage() {
   return (
     <div className="relative">
       {/* 1. HERO SECTION (Identical visual design to Reference Image 1) */}
-      <section id="top" className="relative isolate min-h-[100svh] overflow-hidden bg-ink">
+      <section id="top" className="relative isolate min-h-[100svh] overflow-hidden bg-[#0F1D17]">
         {/* Background Image with slow zoom animation */}
         <img
           src="/images/high-court.jpg"
@@ -42,47 +34,49 @@ export default function HomePage() {
         <img
           src="/images/quaid-e-azam.png"
           alt="Quaid-e-Azam Muhammad Ali Jinnah"
-          className="animate-rise pointer-events-none absolute right-0 bottom-0 -z-10 h-[50%] w-auto object-cover opacity-30 quaid-portrait-mask sm:h-[60%] sm:opacity-45 lg:h-[88%] lg:opacity-80"
+          className="animate-rise pointer-events-none absolute right-0 bottom-0 -z-10 h-[50%] w-auto object-cover opacity-35 quaid-portrait-mask sm:h-[65%] sm:opacity-55 lg:h-[88%] lg:opacity-85"
         />
 
         {/* Hero Content */}
         <div className="mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-4 sm:px-6 pt-32 pb-16">
           <div className="max-w-2xl">
-            <p className="animate-rise eyebrow flex items-center gap-3 text-gold">
-              <Scale className="h-4 w-4 text-gold" />
+            <p className="animate-rise eyebrow flex items-center gap-2.5 text-gold">
+              <Scale className="h-4 w-4 text-gold shrink-0" />
               <span>Advocates &amp; Legal Consultants · Karachi</span>
             </p>
 
             <h1
-              className="animate-rise mt-6 text-5xl leading-[1.02] font-extrabold tracking-wide text-ink-foreground uppercase sm:text-7xl font-display"
+              className="animate-rise mt-5 text-4xl sm:text-6xl lg:text-7xl leading-[1.04] font-extrabold tracking-wide text-white uppercase font-display"
               style={{ animationDelay: "0.1s" }}
             >
               Quaid-e-Azam <br className="hidden sm:inline" />
               <span className="text-gold-gradient">Law Associates</span>
             </h1>
 
+            {/* Responsive, high-contrast, crystal-clear description text */}
             <p
-              className="animate-rise mt-4 max-w-xl text-lg leading-relaxed text-ink-foreground/80 font-normal"
+              className="animate-rise mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-[#F4EFE6] font-normal"
               style={{ animationDelay: "0.3s" }}
             >
-              Trusted legal representation led by Advocate Raheel Anis — delivered with professionalism, dedication and complete confidentiality.
+              Trusted legal representation led by{" "}
+              <strong className="text-gold font-semibold">Advocate Raheel Anis</strong> — delivered with professionalism, dedication and complete confidentiality.
             </p>
 
             {/* CTAs */}
             <div
-              className="animate-rise mt-10 flex flex-wrap gap-3"
+              className="animate-rise mt-8 sm:mt-10 flex flex-wrap gap-3"
               style={{ animationDelay: "0.4s" }}
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer bg-gold-gradient text-gold-foreground font-semibold shadow-gold hover:brightness-105 hover:-translate-y-0.5 transition-all h-13 rounded-sm px-8 text-[0.95rem]"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer bg-gold-gradient text-ink font-bold shadow-gold hover:brightness-105 hover:-translate-y-0.5 transition-all h-12 rounded-sm px-7 text-sm sm:text-base"
               >
                 Book Consultation
               </Link>
 
               <a
                 href="tel:+923008211981"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors border border-ink-foreground/40 text-ink-foreground font-semibold hover:bg-ink-foreground/10 hover:border-gold h-13 rounded-sm px-8 text-[0.95rem]"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors border border-white/30 text-white font-semibold hover:bg-white/10 hover:border-gold h-12 rounded-sm px-6 text-sm sm:text-base"
               >
                 <Phone className="h-4 w-4 text-gold" />
                 <span>0300-8211981</span>
@@ -92,7 +86,7 @@ export default function HomePage() {
                 href="https://wa.me/923008211981?text=Hello%20Advocate%20Raheel%20Anis,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors bg-whatsapp text-white font-semibold shadow hover:brightness-110 h-13 rounded-sm px-8 text-[0.95rem]"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors bg-whatsapp text-white font-semibold shadow hover:brightness-110 h-12 rounded-sm px-6 text-sm sm:text-base"
               >
                 <MessageCircle className="h-4 w-4 fill-current" />
                 <span>WhatsApp</span>
@@ -100,26 +94,26 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Minimalist Trust Stats (Identical to Reference Image 1) */}
+          {/* Minimalist Trust Stats (Exact Reference Layout & Typography) */}
           <dl
-            className="animate-rise mt-16 sm:mt-20 grid max-w-3xl grid-cols-3 gap-6 border-t border-ink-foreground/15 pt-8"
+            className="animate-rise mt-14 sm:mt-20 grid max-w-3xl grid-cols-3 gap-4 sm:gap-6 border-t border-white/15 pt-6 sm:pt-8"
             style={{ animationDelay: "0.55s" }}
           >
             <div>
-              <dt className="font-display text-3xl sm:text-4xl font-bold text-gold">2</dt>
-              <dd className="mt-1 text-xs tracking-wide text-ink-foreground/70 uppercase">
+              <dt className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gold">2</dt>
+              <dd className="mt-1 text-[0.65rem] sm:text-xs tracking-wider text-[#F4EFE6]/75 uppercase font-medium">
                 Offices in Karachi
               </dd>
             </div>
             <div>
-              <dt className="font-display text-3xl sm:text-4xl font-bold text-gold">9+</dt>
-              <dd className="mt-1 text-xs tracking-wide text-ink-foreground/70 uppercase">
+              <dt className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gold">9+</dt>
+              <dd className="mt-1 text-[0.65rem] sm:text-xs tracking-wider text-[#F4EFE6]/75 uppercase font-medium">
                 Areas of practice
               </dd>
             </div>
             <div>
-              <dt className="font-display text-3xl sm:text-4xl font-bold text-gold">100%</dt>
-              <dd className="mt-1 text-xs tracking-wide text-ink-foreground/70 uppercase">
+              <dt className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gold">100%</dt>
+              <dd className="mt-1 text-[0.65rem] sm:text-xs tracking-wider text-[#F4EFE6]/75 uppercase font-medium">
                 Confidential advice
               </dd>
             </div>
@@ -161,13 +155,13 @@ export default function HomePage() {
       </section>
 
       {/* 3. FIRM EMBLEM & MISSION QUOTES (Exact Reference Section) */}
-      <section className="bg-ink py-20 sm:py-24">
+      <section className="bg-[#0F1D17] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex flex-col items-center text-center">
             <img
               src="/images/firm-logo.png"
               alt="Quaid-e-Azam Law Associates logo"
-              className="h-36 w-36 sm:h-44 sm:w-44 rounded-full bg-card object-contain p-2 shadow-elegant"
+              className="h-36 w-36 sm:h-44 sm:w-44 rounded-full bg-white/10 object-contain p-2 shadow-elegant border border-gold/40"
               loading="lazy"
             />
             <h2 className="mt-8 text-4xl font-extrabold tracking-wide text-gold-gradient uppercase sm:text-6xl font-display">
@@ -175,18 +169,18 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-sm border border-gold/40 bg-ink/60 p-8 shadow-sm">
-              <p className="font-display text-lg leading-relaxed font-normal text-ink-foreground">
+            <div className="rounded-sm border border-gold/40 bg-white/5 p-8 shadow-sm">
+              <p className="font-display text-lg leading-relaxed font-normal text-[#F4EFE6]">
                 “We treat every client&apos;s case with the highest degree of priority, confidentiality, and professional zeal.”
               </p>
             </div>
-            <div className="rounded-sm border border-gold/40 bg-ink/60 p-8 shadow-sm">
-              <p className="font-display text-lg leading-relaxed font-normal text-ink-foreground">
+            <div className="rounded-sm border border-gold/40 bg-white/5 p-8 shadow-sm">
+              <p className="font-display text-lg leading-relaxed font-normal text-[#F4EFE6]">
                 “Delivering practical, result-oriented legal solutions tailored to your specific needs.”
               </p>
             </div>
-            <div className="rounded-sm border border-gold/40 bg-ink/60 p-8 shadow-sm">
-              <p className="font-display text-lg leading-relaxed font-normal text-ink-foreground">
+            <div className="rounded-sm border border-gold/40 bg-white/5 p-8 shadow-sm">
+              <p className="font-display text-lg leading-relaxed font-normal text-[#F4EFE6]">
                 “Standing as your shield and voice before the courts of law.”
               </p>
             </div>
@@ -204,8 +198,8 @@ export default function HomePage() {
               className="aspect-[4/5] w-full max-w-md rounded-sm object-cover shadow-elegant"
               loading="lazy"
             />
-            <div className="absolute -right-2 -bottom-8 hidden w-64 rounded-sm bg-ink p-6 shadow-elegant sm:block lg:-right-6">
-              <p className="font-display text-2xl leading-snug text-ink-foreground italic">
+            <div className="absolute -right-2 -bottom-8 hidden w-64 rounded-sm bg-[#0F1D17] p-6 shadow-elegant sm:block lg:-right-6">
+              <p className="font-display text-2xl leading-snug text-[#F4EFE6] italic">
                 “Honest, effective and result-oriented legal services.”
               </p>
               <p className="eyebrow mt-4 text-gold">Our mission</p>
@@ -265,7 +259,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. LEAD ADVOCATE SPOTLIGHT (Chambers Background) */}
-      <section id="advocate" className="relative isolate scroll-mt-20 overflow-hidden bg-ink py-20 sm:py-28">
+      <section id="advocate" className="relative isolate scroll-mt-20 overflow-hidden bg-[#0F1D17] py-20 sm:py-28">
         <img
           src="/images/chambers.jpg"
           alt="Law Chambers Karachi"
@@ -280,10 +274,10 @@ export default function HomePage() {
             <div className="max-w-2xl">
               <p className="eyebrow text-gold">Lead Advocate</p>
               <div className="gold-rule mt-4" />
-              <h2 className="mt-5 text-4xl sm:text-5xl leading-tight font-bold text-ink-foreground font-display">
+              <h2 className="mt-5 text-4xl sm:text-5xl leading-tight font-bold text-white font-display">
                 Advocate <span className="text-gold-gradient">Raheel Anis</span>
               </h2>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-foreground/80">
+              <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#F4EFE6]/85">
                 Dedicated courtroom advocacy and strategic representation in Karachi. Advocate Raheel Anis specialises in civil, criminal, corporate, banking, taxation, constitutional, family and property matters — committed to practical legal solutions with honesty, dedication and professionalism.
               </p>
             </div>
@@ -291,7 +285,7 @@ export default function HomePage() {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/advocate"
-                className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold-gradient px-8 text-sm font-semibold text-gold-foreground shadow-gold hover:brightness-105 h-13"
+                className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold-gradient px-8 text-sm font-bold text-ink shadow-gold hover:brightness-105 h-13"
               >
                 <span>Speak with the Advocate</span>
                 <ArrowRight className="h-4 w-4" />
@@ -300,37 +294,37 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-4">
-            <div className="flex items-start gap-5 rounded-sm border border-ink-foreground/15 bg-ink/60 p-6 backdrop-blur">
+            <div className="flex items-start gap-5 rounded-sm border border-white/15 bg-white/5 p-6 backdrop-blur">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/60 text-gold">
                 <Landmark className="h-5 w-5" />
               </span>
               <div>
                 <p className="eyebrow text-gold">Primary Jurisdiction</p>
-                <p className="mt-2 font-display text-xl sm:text-2xl text-ink-foreground">
+                <p className="mt-2 font-display text-xl sm:text-2xl text-white">
                   Karachi &amp; Sindh Appellate Courts
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-5 rounded-sm border border-ink-foreground/15 bg-ink/60 p-6 backdrop-blur">
+            <div className="flex items-start gap-5 rounded-sm border border-white/15 bg-white/5 p-6 backdrop-blur">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/60 text-gold">
                 <Shield className="h-5 w-5" />
               </span>
               <div>
                 <p className="eyebrow text-gold">Client Privilege</p>
-                <p className="mt-2 font-display text-xl sm:text-2xl text-ink-foreground">
+                <p className="mt-2 font-display text-xl sm:text-2xl text-white">
                   100% Confidential Legal Advisory
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-5 rounded-sm border border-ink-foreground/15 bg-ink/60 p-6 backdrop-blur">
+            <div className="flex items-start gap-5 rounded-sm border border-white/15 bg-white/5 p-6 backdrop-blur">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/60 text-gold">
                 <Gavel className="h-5 w-5" />
               </span>
               <div>
                 <p className="eyebrow text-gold">Courtroom Focus</p>
-                <p className="mt-2 font-display text-xl sm:text-2xl text-ink-foreground">
+                <p className="mt-2 font-display text-xl sm:text-2xl text-white">
                   Trial, appellate and writ jurisdiction
                 </p>
               </div>
@@ -359,17 +353,17 @@ export default function HomePage() {
               <Link
                 key={practice.slug}
                 href={`/practice-areas/${practice.slug}`}
-                className="group flex flex-col justify-between rounded-sm border border-border bg-card p-5 sm:p-7 transition-all hover:bg-ink hover:border-gold hover:shadow-card"
+                className="group flex flex-col justify-between rounded-sm border border-border bg-card p-5 sm:p-7 transition-all hover:bg-[#0F1D17] hover:border-gold hover:shadow-card"
               >
                 <div>
                   <div className="flex items-center justify-between text-gold-deep group-hover:text-gold">
                     <Scale className="h-6 w-6" />
                     <ArrowRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>
-                  <h3 className="mt-4 font-display text-lg sm:text-2xl font-bold text-foreground group-hover:text-ink-foreground transition-colors">
+                  <h3 className="mt-4 font-display text-lg sm:text-2xl font-bold text-foreground group-hover:text-white transition-colors">
                     {practice.title}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground group-hover:text-ink-foreground/75 transition-colors line-clamp-2 sm:line-clamp-3">
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground group-hover:text-white/75 transition-colors line-clamp-2 sm:line-clamp-3">
                     {practice.shortDescription}
                   </p>
                 </div>
@@ -395,22 +389,22 @@ export default function HomePage() {
       {/* 7. CONSTITUTIONAL PRACTICE FOCUS (With 1973 Constitution Book) */}
       <section className="py-20 sm:py-28 bg-card border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="grid items-center gap-10 overflow-hidden rounded-sm bg-ink lg:grid-cols-[1fr_1.3fr]">
+          <div className="grid items-center gap-10 overflow-hidden rounded-sm bg-[#0F1D17] lg:grid-cols-[1fr_1.3fr]">
             <img
               src="/images/constitution.jpg"
               alt="The 1973 Constitution of the Islamic Republic of Pakistan"
               className="h-full max-h-[560px] w-full object-cover object-top"
               loading="lazy"
             />
-            <div className="p-8 sm:p-12 text-ink-foreground">
+            <div className="p-8 sm:p-12 text-[#F4EFE6]">
               <p className="eyebrow text-gold">Constitutional Practice</p>
-              <h3 className="mt-4 text-3xl sm:text-5xl leading-tight font-bold font-display">
+              <h3 className="mt-4 text-3xl sm:text-5xl leading-tight font-bold font-display text-white">
                 Upholding the rights guaranteed by the 1973 Constitution
               </h3>
-              <p className="mt-5 text-base sm:text-lg leading-relaxed text-ink-foreground/80">
+              <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#F4EFE6]/80">
                 When a public body oversteps its powers or your fundamental rights are at stake, we file and argue constitutional writ petitions before the Sindh High Court.
               </p>
-              <ul className="mt-8 grid gap-3 text-sm text-ink-foreground/90 sm:grid-cols-2">
+              <ul className="mt-8 grid gap-3 text-sm text-[#F4EFE6]/90 sm:grid-cols-2">
                 <li className="flex items-center gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   Writ petitions (Art. 199)
@@ -548,7 +542,7 @@ export default function HomePage() {
                 href="tel:+923008211981"
                 className="flex items-center gap-5 rounded-sm border border-border bg-background p-4 sm:p-5 transition-colors hover:border-gold"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-ink text-gold shrink-0">
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-[#0F1D17] text-gold shrink-0">
                   <Phone className="h-5 w-5" />
                 </span>
                 <div>
@@ -565,7 +559,7 @@ export default function HomePage() {
                 href="mailto:raheelanis81@gmail.com"
                 className="flex items-center gap-5 rounded-sm border border-border bg-background p-4 sm:p-5 transition-colors hover:border-gold"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-ink text-gold shrink-0">
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-[#0F1D17] text-gold shrink-0">
                   <MessageCircle className="h-5 w-5" />
                 </span>
                 <div className="min-w-0">
