@@ -9,11 +9,6 @@ export function Preloader() {
 
   const dismiss = useCallback(() => {
     setIsFadingOut(true);
-    try {
-      sessionStorage.setItem("qla_preloader_seen", "1");
-    } catch {
-      // Ignore storage errors in private browsing / sandboxes
-    }
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 320);
@@ -30,20 +25,7 @@ export function Preloader() {
       return;
     }
 
-    // Check if user has already seen preloader in this session or prefers reduced motion
-    try {
-      const alreadySeen = sessionStorage.getItem("qla_preloader_seen") === "1";
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      if (alreadySeen || prefersReducedMotion) {
-        setIsVisible(false);
-        return;
-      }
-    } catch {
-      // Fallback
-    }
-
-    // Normal production mode
+    // Always show preloader on page load / page refresh
     setIsVisible(true);
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -53,10 +35,10 @@ export function Preloader() {
     };
     window.addEventListener("keydown", handleKeyDown);
 
-    // Complete lifecycle: 2.25s total duration
+    // Complete lifecycle: ~2.15s animation + smooth fadeout
     const completeTimer = setTimeout(() => {
       dismiss();
-    }, 2250);
+    }, 2150);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);

@@ -174,11 +174,6 @@ body {
    Exit    (2.0 - 2.25s): Seamless Dissolve into Homepage
    ========================================================================== */
 
-/* Anti-flash rule for subsequent session views */
-html.preloader-done #qla-preloader {
-  display: none !important;
-}
-
 /* Entire Preloader Backdrop Fade */
 @keyframes qla-backdrop-fade {
   0%, 88% {

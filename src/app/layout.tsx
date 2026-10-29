@@ -84,20 +84,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preload" href="/images/firm-crest-official.jpg" as="image" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                var isDebug = window.location.search.indexOf('debug_phase') !== -1;
-                if (!isDebug) {
-                  if (sessionStorage.getItem('qla_preloader_seen') === '1' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    document.documentElement.classList.add('preloader-done');
-                  }
-                }
-              } catch(e) {}
-            `,
-          }}
-        />
         <LawFirmJsonLd />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased selection:bg-gold/30 selection:text-ink">
