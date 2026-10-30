@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Scale, ShieldCheck, Landmark, Award, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About the Firm | Quaid-e-Azam Law Associates Karachi",
+  title: "About Our Law Chambers",
   description:
-    "Learn about Quaid-e-Azam Law Associates, our founding philosophy inspired by Quaid-e-Azam Muhammad Ali Jinnah, bar standing across Sindh, and ethical legal advocacy led by Advocate Raheel Anis.",
+    "Learn about Quaid-e-Azam Law Associates, our founding philosophy, bar standing across Sindh, and legal advocacy led by Advocate Raheel Anis in Karachi.",
   alternates: {
     canonical: "/about",
   },

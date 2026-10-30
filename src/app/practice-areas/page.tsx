@@ -4,9 +4,9 @@ import { ArrowRight, Scale, Shield, Landmark } from "lucide-react";
 import { PRACTICE_AREAS } from "@/data/practiceAreas";
 
 export const metadata: Metadata = {
-  title: "Practice Areas | Quaid-e-Azam Law Associates Karachi",
+  title: "Legal Practice Areas",
   description:
-    "Explore our 9 core practice areas led by Advocate Raheel Anis: Constitutional Writs, Criminal Defense, Civil Litigation, Corporate Law, Banking Recovery, FBR Taxation, Property Disputes, and Family Law in Karachi.",
+    "Explore legal practice areas led by Advocate Raheel Anis: constitutional writs, criminal bail, civil disputes, corporate compliance, tax & property in Karachi.",
   alternates: {
     canonical: "/practice-areas",
   },

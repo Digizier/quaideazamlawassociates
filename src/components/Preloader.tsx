@@ -161,12 +161,12 @@ export function Preloader() {
               ...debugStyle,
             }}
           >
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase leading-tight bg-gradient-to-r from-[#ECC274] via-[#FFF9EE] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)]">
+            <p className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase leading-tight bg-gradient-to-r from-[#ECC274] via-[#FFF9EE] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)]">
               Quaid-e-Azam
-            </h1>
-            <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] sm:tracking-[0.26em] uppercase leading-tight text-[#EED8A1] mt-1 sm:mt-1.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+            </p>
+            <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[0.2em] sm:tracking-[0.26em] uppercase leading-tight text-[#EED8A1] mt-1 sm:mt-1.5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
               Law Associates
-            </h2>
+            </p>
           </div>
 
           {/* Hairline Golden Rule */}

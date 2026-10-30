@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Advocate Raheel Anis | High Court Advocate Karachi",
+  title: "Advocate Raheel Anis, Counsel",
   description:
-    "Official profile of Advocate Raheel Anis, Advocate High Court of Sindh and founder of Quaid-e-Azam Law Associates, Karachi. Litigating constitutional, criminal, civil, banking, tax, and property disputes.",
+    "Profile of Advocate Raheel Anis, Advocate High Court of Sindh & founder of Quaid-e-Azam Law Associates Karachi. Litigating civil, criminal & writ matters.",
   alternates: {
     canonical: "/advocate",
   },
