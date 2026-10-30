@@ -3,7 +3,6 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { LawFirmJsonLd } from "@/components/JsonLd";
 import { Preloader } from "@/components/Preloader";
 
@@ -92,7 +91,6 @@ export default function RootLayout({
         <main className="min-h-[calc(100vh-140px)]">{children}</main>
         <Footer />
         <MobileBottomNav />
-        <WhatsAppFloatingButton />
       </body>
     </html>
   );
