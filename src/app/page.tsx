@@ -476,16 +476,16 @@ export default function HomePage() {
               </div>
               <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between text-xs font-semibold">
                 <a
-                  href="https://www.google.com/maps/search/Khayaban-e-Sehar+Phase+7+DHA+Karachi"
+                  href="https://maps.app.goo.gl/3HtDgqPWVsnKGdtz9"
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary hover:text-gold-deep flex items-center gap-1.5"
                 >
-                  <MapPin className="h-3.5 w-3.5" />
-                  Get directions
+                  <MapPin className="h-3.5 w-3.5 text-red-600" />
+                  Google Maps
                 </a>
                 <Link href="/offices" className="text-gold-deep hover:underline">
-                  Chamber Details →
+                  Chamber Details & Map →
                 </Link>
               </div>
             </article>
@@ -510,16 +510,16 @@ export default function HomePage() {
               </div>
               <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between text-xs font-semibold">
                 <a
-                  href="https://www.google.com/maps/search/Fareed+Chamber+Syedna+Tahir+Saifuddin+Road+Karachi"
+                  href="https://maps.app.goo.gl/tPn7ExQKHrA7rgAY9"
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary hover:text-gold-deep flex items-center gap-1.5"
                 >
-                  <MapPin className="h-3.5 w-3.5" />
-                  Get directions
+                  <MapPin className="h-3.5 w-3.5 text-red-600" />
+                  Google Maps
                 </a>
                 <Link href="/offices" className="text-gold-deep hover:underline">
-                  Chamber Details →
+                  Chamber Details & Map →
                 </Link>
               </div>
             </article>

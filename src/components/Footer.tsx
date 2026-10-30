@@ -64,19 +64,33 @@ export function Footer() {
           <div>
             <p className="eyebrow text-gold font-bold">Karachi Chambers</p>
             <div className="mt-4 space-y-4 text-xs sm:text-sm">
-              <div className="border-l-2 border-gold/60 pl-3">
-                <p className="font-semibold text-ink-foreground">DHA Phase 7 Chamber</p>
+              <a
+                href="https://maps.app.goo.gl/3HtDgqPWVsnKGdtz9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border-l-2 border-gold/60 pl-3 hover:border-gold transition-colors group"
+              >
+                <p className="font-semibold text-ink-foreground group-hover:text-gold transition-colors">
+                  DHA Phase 7 Chamber ↗
+                </p>
                 <p className="mt-1 text-ink-muted">
                   Ground Floor No. 3, Plot C/7/C, Khayaban-e-Sehar Commercial, Phase 7, DHA, Karachi.
                 </p>
-              </div>
+              </a>
 
-              <div className="border-l-2 border-gold/60 pl-3">
-                <p className="font-semibold text-ink-foreground">City Court Chamber</p>
+              <a
+                href="https://maps.app.goo.gl/tPn7ExQKHrA7rgAY9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border-l-2 border-gold/60 pl-3 hover:border-gold transition-colors group"
+              >
+                <p className="font-semibold text-ink-foreground group-hover:text-gold transition-colors">
+                  City Court Chamber ↗
+                </p>
                 <p className="mt-1 text-ink-muted">
                   Office 102, Mezzanine Floor, Fareed Chamber, Syedna Tahir Saifuddin Rd, Opp. City Court, Karachi.
                 </p>
-              </div>
+              </a>
             </div>
           </div>
 

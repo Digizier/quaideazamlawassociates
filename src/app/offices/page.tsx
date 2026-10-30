@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Navigation, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Navigation, ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Chambers & Office Locations | Quaid-e-Azam Law Associates Karachi",
@@ -52,11 +52,11 @@ export default function OfficesPage() {
 
               <div className="mt-6 space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-red-600 shrink-0 mt-0.5 fill-red-600/20" />
                   <div>
                     <strong className="block text-foreground font-semibold">Chamber Address:</strong>
                     <p className="text-muted-foreground leading-relaxed mt-0.5">
-                      Ground Floor No. 3, Plot C/7/C, Khayaban-e-Sehar Commercial, Phase 7, Defence Housing Authority (DHA), Karachi, Pakistan.
+                      Ground Floor No. 3, Plot C/7/C, Khayaban-e-Sehar Commercial, Phase 7, DHA, Karachi.
                     </p>
                   </div>
                 </div>
@@ -81,16 +81,46 @@ export default function OfficesPage() {
                   </div>
                 </div>
               </div>
+
+              {/* Embedded Google Map with Red Location Pin */}
+              <div className="mt-6 overflow-hidden rounded-md border border-border bg-background shadow-sm">
+                <div className="flex items-center justify-between border-b border-border bg-secondary/60 px-3 py-2 text-xs">
+                  <div className="flex items-center gap-1.5 font-semibold text-foreground">
+                    <span className="flex h-2 w-2 rounded-full bg-red-600 animate-ping" />
+                    <span className="h-2 w-2 rounded-full bg-red-600 -ml-3.5" />
+                    <span className="ml-1 text-red-700 font-bold">DHA Phase 7 Pin Location</span>
+                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/3HtDgqPWVsnKGdtz9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:text-gold-deep"
+                  >
+                    <span>Full Map</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+                <div className="relative h-64 sm:h-72 w-full bg-muted">
+                  <iframe
+                    title="Quaid-e-Azam Law Associates DHA Phase 7 Chamber Map"
+                    src="https://maps.google.com/maps?q=24.8157096,67.0707574&z=16&output=embed"
+                    className="h-full w-full border-0"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-3">
               <a
-                href="https://www.google.com/maps/search/Khayaban-e-Sehar+Commercial+Phase+7+DHA+Karachi"
+                href="https://maps.app.goo.gl/3HtDgqPWVsnKGdtz9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary hover:text-gold-deep"
               >
-                <Navigation className="h-4 w-4" />
+                <Navigation className="h-4 w-4 text-red-600" />
                 <span>Open in Google Maps</span>
               </a>
 
@@ -122,7 +152,7 @@ export default function OfficesPage() {
 
               <div className="mt-6 space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-red-600 shrink-0 mt-0.5 fill-red-600/20" />
                   <div>
                     <strong className="block text-foreground font-semibold">Chamber Address:</strong>
                     <p className="text-muted-foreground leading-relaxed mt-0.5">
@@ -151,16 +181,46 @@ export default function OfficesPage() {
                   </div>
                 </div>
               </div>
+
+              {/* Embedded Google Map with Red Location Pin */}
+              <div className="mt-6 overflow-hidden rounded-md border border-border bg-background shadow-sm">
+                <div className="flex items-center justify-between border-b border-border bg-secondary/60 px-3 py-2 text-xs">
+                  <div className="flex items-center gap-1.5 font-semibold text-foreground">
+                    <span className="flex h-2 w-2 rounded-full bg-red-600 animate-ping" />
+                    <span className="h-2 w-2 rounded-full bg-red-600 -ml-3.5" />
+                    <span className="ml-1 text-red-700 font-bold">City Courts Pin Location</span>
+                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/tPn7ExQKHrA7rgAY9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:text-gold-deep"
+                  >
+                    <span>Full Map</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+                <div className="relative h-64 sm:h-72 w-full bg-muted">
+                  <iframe
+                    title="Quaid-e-Azam Law Associates City Court Chamber Map"
+                    src="https://maps.google.com/maps?q=24.8556608,67.0049443&z=17&output=embed"
+                    className="h-full w-full border-0"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-3">
               <a
-                href="https://www.google.com/maps/search/Fareed+Chamber+Syedna+Tahir+Saifuddin+Road+Karachi"
+                href="https://maps.app.goo.gl/tPn7ExQKHrA7rgAY9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary hover:text-gold-deep"
               >
-                <Navigation className="h-4 w-4" />
+                <Navigation className="h-4 w-4 text-red-600" />
                 <span>Open in Google Maps</span>
               </a>
 
