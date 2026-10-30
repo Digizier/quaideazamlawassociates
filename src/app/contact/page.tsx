@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin, MessageCircle, Clock, ShieldCheck, AlertCircle } f
 import { WhatsAppConsultationForm } from "@/components/WhatsAppConsultationForm";
 
 export const metadata: Metadata = {
-  title: "Contact Advocate Raheel Anis | Karachi Law Chambers",
+  title: "Contact Advocate Raheel Anis",
   description:
-    "Direct contact details for Quaid-e-Azam Law Associates. Connect with Advocate Raheel Anis via phone, WhatsApp (0300-8211981), email, or schedule an in-person chamber consultation in DHA or City Court area.",
+    "Contact Quaid-e-Azam Law Associates in Karachi. Call or WhatsApp Advocate Raheel Anis at 0300-8211981 or visit chambers in DHA Phase 7 and City Court area.",
   alternates: {
     canonical: "/contact",
   },

@@ -28,23 +28,37 @@ export function generateStaticParams() {
   }));
 }
 
+const PRACTICE_META_TITLES: Record<string, string> = {
+  "constitutional-petitions": "Constitutional Writs & Petitions",
+  "criminal-law": "Criminal Defense & Bail Advocates",
+  "civil-litigation": "Civil Litigation & Disputes",
+  "corporate-commercial": "Corporate & Commercial Law",
+  "banking-finance": "Banking & Financial Recovery Law",
+  "fbr-taxation": "Taxation & FBR Advisory",
+  "property-real-estate": "Property & Real Estate Law",
+  "family-law": "Family Law & Matrimonial Matters",
+  "legal-consultancy": "Strategic Legal Advisory",
+};
+
 export function generateMetadata({ params }: Props): Metadata {
   const practice = PRACTICE_AREAS.find((p) => p.slug === params.slug);
   if (!practice) {
     return {
-      title: "Practice Area Not Found | Quaid-e-Azam Law Associates",
+      title: "Practice Area Not Found",
     };
   }
 
+  const cleanTitle = PRACTICE_META_TITLES[practice.slug] || practice.title;
+
   return {
-    title: `${practice.title} | Advocate Raheel Anis, Karachi`,
-    description: `${practice.tagline}. Legal representation, drafting, and advocacy before the High Court of Sindh and Karachi courts. Consult Advocate Raheel Anis.`,
+    title: cleanTitle,
+    description: `${practice.tagline}. Legal advocacy in Sindh High Court by Advocate Raheel Anis, Karachi.`,
     alternates: {
       canonical: `/practice-areas/${practice.slug}`,
     },
     openGraph: {
-      title: `${practice.title} | Quaid-e-Azam Law Associates`,
-      description: practice.shortDescription,
+      title: `${cleanTitle} | Quaid-e-Azam Law Associates`,
+      description: `${practice.tagline}. Legal advocacy in Sindh High Court by Advocate Raheel Anis, Karachi.`,
       url: `https://quaideazamlawassociates.com/practice-areas/${practice.slug}`,
     },
   };

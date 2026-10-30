@@ -165,7 +165,7 @@ export default function RootLayout({
             <span style="background:rgba(59,130,246,0.18);color:#93c5fd;border:1px solid rgba(59,130,246,0.4);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 16px;border-radius:9999px;display:inline-block;margin-bottom:16px;">
               Maintenance & Development Mode
             </span>
-            <h1 style="font-size:26px;font-weight:800;color:#ffffff;margin:0 0 12px 0;">Website Under Construction</h1>
+            <div style="font-size:26px;font-weight:800;color:#ffffff;margin:0 0 12px 0;">Website Under Construction</div>
             <p style="font-size:15px;color:#94a3b8;line-height:1.6;margin:0 0 24px 0;">
               \${customNotice}
             </p>
@@ -185,7 +185,7 @@ export default function RootLayout({
             <span style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.35);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:6px 16px;border-radius:9999px;display:inline-block;margin-bottom:16px;">
               Website Access Locked • \${cycle} Payment Overdue
             </span>
-            <h1 style="font-size:26px;font-weight:800;color:#ffffff;margin:0 0 12px 0;">Nadir Habib Payment Remaining</h1>
+            <div style="font-size:26px;font-weight:800;color:#ffffff;margin:0 0 12px 0;">Nadir Habib Payment Remaining</div>
             <p style="font-size:15px;color:#94a3b8;line-height:1.6;margin:0 0 24px 0;">
               \${customNotice || 'Your hosting subscription access is locked. Please contact Nadir Habib on WhatsApp to pay remaining dues and restore access.'}
             </p>

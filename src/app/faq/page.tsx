@@ -5,9 +5,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { WhatsAppConsultationForm } from "@/components/WhatsAppConsultationForm";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Legal Questions (FAQ) | Karachi Law Chambers",
+  title: "Legal FAQs & Answers Karachi",
   description:
-    "Clear answers on booking consultations, Sindh High Court writ petitions, criminal bail, property title verification, banking court deadlines, and family law in Karachi.",
+    "Clear legal answers on booking consultations, Sindh High Court writ petitions, criminal bail, property title verification & family court cases in Karachi.",
   alternates: {
     canonical: "/faq",
   },

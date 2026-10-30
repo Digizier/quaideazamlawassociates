@@ -3,9 +3,9 @@ import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, ShieldCheck, Navigation, ArrowRight, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Chambers & Office Locations | Quaid-e-Azam Law Associates Karachi",
+  title: "Chambers & Office Locations",
   description:
-    "Visit Quaid-e-Azam Law Associates at our two Karachi chambers: DHA Phase 7 (Khayaban-e-Sehar) and City Court Area (Fareed Chamber). Direct consultations with Advocate Raheel Anis.",
+    "Visit Quaid-e-Azam Law Associates at two Karachi chambers: DHA Phase 7 (Khayaban-e-Sehar) & City Court Area. Direct meetings with Advocate Raheel Anis.",
   alternates: {
     canonical: "/offices",
   },
