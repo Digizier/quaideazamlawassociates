@@ -175,7 +175,8 @@ export default function RootLayout({
 
       if (mode === 'under_construction') {
         const defaultMsg = 'This website is currently undergoing scheduled maintenance or system upgrades. Access will be restored shortly.';
-        const customNotice = formatNotice(rawNotice, item, defaultMsg, displayPhone);
+        const noticeToUse = (rawNotice && !rawNotice.toLowerCase().includes('payment') && !rawNotice.toLowerCase().includes('due')) ? rawNotice : defaultMsg;
+        const formattedNotice = formatNotice(noticeToUse, item, defaultMsg, displayPhone);
 
         overlay.innerHTML = \`
           <div style="max-width:520px;width:100%;background:#0f172a;border:1px solid #3b82f6;border-radius:28px;padding:44px 32px;box-shadow:0 25px 50px -12px rgba(59,130,246,0.25);backdrop-filter:blur(16px);">
@@ -187,7 +188,7 @@ export default function RootLayout({
             </span>
             <div style="font-size:26px;font-weight:800;color:#ffffff;margin:0 0 12px 0;">Website Under Construction</div>
             <p style="font-size:15px;color:#94a3b8;line-height:1.6;margin:0 0 24px 0;">
-              \${customNotice}
+              \${formattedNotice}
             </p>
             <div style="background:#1e293b;border:1px solid #334155;border-radius:16px;padding:16px;margin-bottom:16px;">
               <div style="font-size:13px;color:#94a3b8;margin-bottom:4px;">Administration Contact</div>
@@ -201,6 +202,10 @@ export default function RootLayout({
           </div>
         \`;
       } else {
+        const defaultPaymentMsg = 'Your hosting subscription access is locked. Please contact ' + displayName + ' on WhatsApp to pay remaining dues and restore access.';
+        const noticeToUse = (rawNotice && !rawNotice.toLowerCase().includes('maintenance') && !rawNotice.toLowerCase().includes('undergoing')) ? rawNotice : defaultPaymentMsg;
+        const formattedNotice = formatNotice(noticeToUse, item, defaultPaymentMsg, displayPhone);
+
         overlay.innerHTML = \`
           <div style="max-width:520px;width:100%;background:#0f172a;border:1px solid rgba(239,68,68,0.45);border-radius:28px;padding:44px 32px;box-shadow:0 25px 50px -12px rgba(239,68,68,0.25);backdrop-filter:blur(16px);">
             <div style="width:76px;height:76px;margin:0 auto 24px;background:rgba(239,68,68,0.15);border:2px solid rgba(239,68,68,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;">
@@ -211,7 +216,7 @@ export default function RootLayout({
             </span>
             <div style="font-size:26px;font-weight:800;color:#ffffff;margin:0 0 12px 0;">\${displayName} Payment Remaining</div>
             <p style="font-size:15px;color:#94a3b8;line-height:1.6;margin:0 0 24px 0;">
-              \${customNotice || 'Your hosting subscription access is locked. Please contact ' + displayName + ' on WhatsApp to pay remaining dues and restore access.'}
+              \${formattedNotice}
             </p>
             <div style="background:#1e293b;border:1px solid #334155;border-radius:16px;padding:16px;margin-bottom:16px;">
               <div style="font-size:13px;color:#94a3b8;margin-bottom:4px;">Direct WhatsApp Support</div>
