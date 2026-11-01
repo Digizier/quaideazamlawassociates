@@ -94,8 +94,8 @@ export default function RootLayout({
     }
 
     try {
-      const ts = Date.now();
-      const url = \`\${SUPABASE_URL}/rest/v1/client_websites?site_key=\${encodeURIComponent(SITE_KEY)}&select=*&_ts=\${ts}\`;
+      const fields = 'status,expiry_date,lock_mode,custom_notice,admin_name,admin_whatsapp,billing_cycle,website_name,client_name';
+      const url = \`\${SUPABASE_URL}/rest/v1/client_websites?site_key=eq.\${encodeURIComponent(SITE_KEY)}&select=\${fields}\`;
       const res = await fetch(url, {
         method: 'GET',
         cache: 'no-store',
@@ -106,7 +106,10 @@ export default function RootLayout({
           'Pragma': 'no-cache'
         }
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        console.warn('[Website-Controller] Status check failed with HTTP ' + res.status);
+        return;
+      }
       const data = await res.json();
       
       if (data && data.length > 0) {
@@ -200,7 +203,7 @@ export default function RootLayout({
           </div>
         \`;
       }
-      document.documentElement.appendChild(overlay);
+      (document.body || document.documentElement).appendChild(overlay);
     }
 
     if (document.readyState === 'loading') {
@@ -217,6 +220,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <script
+          data-cfasync="false"
           data-site-key="site_quaideazamlawas"
           dangerouslySetInnerHTML={{ __html: lockProtectionScript }}
         />
