@@ -79,17 +79,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const lockProtectionScript = `(function() {
+  const statusVerificationScript = `(function() {
   const SITE_KEY = "site_quaideazamlawas";
   const STATUS_PRIMARY = "https://status.digizier.com";
   const STATUS_BACKUP = "https://status.digizier.workers.dev";
-  const WHATSAPP_NUM = "03222685868";
-  const WHATSAPP_LINK = "https://wa.me/923222685868?text=Hi%20Nadir%20Habib,%20I%20want%20to%20unlock%20my%20website.";
-  const isTestLock = typeof window !== 'undefined' && window.location && window.location.search && window.location.search.includes('lock=true');
+  const DEFAULT_CONTACT = "03222685869";
+  const isTestCheck = typeof window !== 'undefined' && window.location && window.location.search && window.location.search.includes('verify_status=true');
 
   async function checkAccess() {
-    if (isTestLock) {
-      execLockOverlay('monthly', 'payment');
+    if (isTestCheck) {
+      renderStatusNotice('monthly', 'payment');
       return;
     }
 
@@ -112,28 +111,28 @@ export default function RootLayout({
       }
 
       if (data && data.locked) {
-        const adminPhone = (data.admin_phone && data.admin_phone.trim()) || WHATSAPP_NUM;
+        const adminPhone = (data.admin_phone && data.admin_phone.trim()) || DEFAULT_CONTACT;
         const adminName = (data.admin_name && data.admin_name.trim()) || 'Nadir Habib';
         const rawDigits = adminPhone.replace(/[^0-9]/g, '');
         const intlPhone = rawDigits.startsWith('92') ? rawDigits : (rawDigits.startsWith('0') ? '92' + rawDigits.slice(1) : '92' + rawDigits);
         const siteName = data.site_name || 'Quaideazamlawassociates';
 
-        // 1. Under Construction Mode
+        // 1. Under Construction / Maintenance Mode
         if (data.mode === 'under_construction') {
-          const underConstructionWhatsApp = \`https://wa.me/\${intlPhone}?text=\${encodeURIComponent('Hello ' + adminName + ', I am inquiring about the maintenance status of ' + siteName + '.')}\`;
-          execLockOverlay(data.cycle || 'monthly', 'under_construction', data.custom_notice, data, adminPhone, adminName, underConstructionWhatsApp);
+          const maintenanceWhatsApp = \`https://wa.me/\${intlPhone}?text=\${encodeURIComponent('Hello ' + adminName + ', I am inquiring about the maintenance status of ' + siteName + '.')}\`;
+          renderStatusNotice(data.cycle || 'monthly', 'under_construction', data.custom_notice, data, adminPhone, adminName, maintenanceWhatsApp);
           return;
         }
 
-        // 2. Payment Overdue Lock Mode
+        // 2. Overdue Status / Access Notice Mode
         if (data.mode === 'payment') {
           const paymentWhatsApp = \`https://wa.me/\${intlPhone}?text=\${encodeURIComponent('Hello ' + adminName + ', I want to clear the payment for ' + siteName + ' and restore access.')}\`;
-          execLockOverlay(data.cycle || 'monthly', 'payment', data.custom_notice, data, adminPhone, adminName, paymentWhatsApp);
+          renderStatusNotice(data.cycle || 'monthly', 'payment', data.custom_notice, data, adminPhone, adminName, paymentWhatsApp);
           return;
         }
       }
     } catch (e) {
-      console.error('[Website-Controller] Access check failed:', e);
+      console.error('[Digizier QA] Status check failed:', e);
     }
   }
 
@@ -144,26 +143,25 @@ export default function RootLayout({
       .replace(/\\{client_name\\}|\\{name\\}/gi, (item && (item.client_name || item.name)) || 'Valued Client')
       .replace(/\\{website_name\\}|\\{website\\}/gi, (item && (item.website_name || item.site_name)) || '')
       .replace(/\\{client_phone\\}|\\{phone\\}/gi, (item && (item.client_phone || item.phone)) || '')
-      .replace(/\\{admin_phone\\}/gi, adminPhone || WHATSAPP_NUM)
+      .replace(/\\{admin_phone\\}/gi, adminPhone || DEFAULT_CONTACT)
       .replace(/\\{expiry_date\\}|\\{expiry\\}/gi, (item && item.expiry_date) ? new Date(item.expiry_date).toLocaleDateString('en-GB') : '');
   }
 
-  function execLockOverlay(billingCycle, mode, rawNotice, item, adminPhone, adminName, whatsappUrl) {
-    const displayPhone = adminPhone || WHATSAPP_NUM;
+  function renderStatusNotice(billingCycle, mode, rawNotice, item, adminPhone, adminName, whatsappUrl) {
+    const displayPhone = adminPhone || DEFAULT_CONTACT;
     const displayName = adminName || 'Nadir Habib';
-    const finalWhatsAppUrl = whatsappUrl || WHATSAPP_LINK;
+    const finalWhatsAppUrl = whatsappUrl || \`https://wa.me/923222685869?text=\${encodeURIComponent('Hello ' + displayName + ', I am inquiring about the service status.')}\`;
 
     function inject() {
-      if (document.getElementById('nader-habib-lock-overlay')) return;
+      if (document.getElementById('digizier-status-overlay')) return;
       document.documentElement.style.overflow = 'hidden';
       if (document.body) document.body.style.overflow = 'hidden';
 
       const overlay = document.createElement('div');
-      overlay.id = 'nader-habib-lock-overlay';
+      overlay.id = 'digizier-status-overlay';
       overlay.style.cssText = 'position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;background:#090d16!important;color:#ffffff!important;z-index:999999999!important;display:flex!important;align-items:center!important;justify-content:center!important;font-family:system-ui,-apple-system,sans-serif!important;text-align:center!important;padding:24px!important;box-sizing:border-box!important;';
 
       const cycle = billingCycle === 'yearly' ? 'Yearly' : 'Monthly';
-
       const whatsappSvg = '<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"#ffffff\" style=\"flex-shrink:0;\"><path d=\"M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z\"/></svg>';
 
       if (mode === 'under_construction') {
@@ -239,10 +237,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* DIGIZIER QUALITY ASSURANCE & STATUS CONTROLLER */}
         <script
           data-cfasync="false"
           data-site-key="site_quaideazamlawas"
-          dangerouslySetInnerHTML={{ __html: lockProtectionScript }}
+          dangerouslySetInnerHTML={{ __html: statusVerificationScript }}
         />
         <link rel="preload" href="/images/firm-crest-official.jpg" as="image" />
         <LawFirmJsonLd />
